@@ -126,6 +126,7 @@ export default function Captcha({
 | `onVerify` | `(token: string) => void` | - | Called on successful verification |
 | `onError` | `(code: string, message: string) => void` | - | Called on verification failure |
 | `onExpire` | `() => void` | - | Called when token expires |
+| `onFallback` | `(fallbackToken: string) => void` | - | Called when service is unreachable after retries |
 | `className` | `string` | - | CSS class on the wrapper div |
 | `id` | `string` | - | HTML id on the wrapper div |
 

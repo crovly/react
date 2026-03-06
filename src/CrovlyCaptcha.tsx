@@ -25,6 +25,7 @@ export function CrovlyCaptcha({
   onVerify,
   onError,
   onExpire,
+  onFallback,
   className,
   id,
 }: CrovlyCaptchaProps) {
@@ -36,6 +37,7 @@ export function CrovlyCaptcha({
   const onVerifyRef = useRef(onVerify);
   const onErrorRef = useRef(onError);
   const onExpireRef = useRef(onExpire);
+  const onFallbackRef = useRef(onFallback);
 
   useEffect(() => {
     onVerifyRef.current = onVerify;
@@ -48,6 +50,10 @@ export function CrovlyCaptcha({
   useEffect(() => {
     onExpireRef.current = onExpire;
   }, [onExpire]);
+
+  useEffect(() => {
+    onFallbackRef.current = onFallback;
+  }, [onFallback]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -96,6 +102,7 @@ export function CrovlyCaptcha({
         onError: (code: string, message: string) =>
           onErrorRef.current?.(code as CrovlyErrorCode, message),
         onExpire: () => onExpireRef.current?.(),
+        onFallback: (fallbackToken: string) => onFallbackRef.current?.(fallbackToken),
       });
 
       if (!cancelled) {

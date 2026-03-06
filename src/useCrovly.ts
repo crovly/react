@@ -111,6 +111,11 @@ export function useCrovly(
         setError(null);
         setIsLoading(true);
       },
+      onFallback: (fallbackToken: string) => {
+        setToken(fallbackToken);
+        setError(null);
+        setIsLoading(false);
+      },
     });
 
     widgetRef.current = widget;

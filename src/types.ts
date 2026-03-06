@@ -26,6 +26,9 @@ export interface CrovlyCaptchaProps {
   onError?: (code: CrovlyErrorCode, message: string) => void;
   /** Called when the token expires and a refresh cycle begins. */
   onExpire?: () => void;
+  /** Called when all retries are exhausted and the service is unreachable.
+   *  Receives a fallback token so you can decide whether to let the form through. */
+  onFallback?: (fallbackToken: string) => void;
   /** Additional CSS class name on the wrapper div. */
   className?: string;
   /** Custom id for the wrapper div. */
