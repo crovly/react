@@ -1,6 +1,6 @@
 {
   "name": "@crovly/react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Official Crovly React SDK — captcha component and hook",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
