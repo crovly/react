@@ -25,6 +25,9 @@
     "url": "https://github.com/crovly/react"
   },
   "homepage": "https://crovly.com",
+  "bugs": {
+    "url": "https://github.com/crovly/react/issues"
+  },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
